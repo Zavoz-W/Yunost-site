@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЦДТТ «Юность»</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="sky-bg" aria-hidden="true">
+
+
+<header class="header">
+  <div class="header__top">
+    <div class="header__left">
+      <div class="header__logo">
+        <img src="assets/logo/logo.png" alt="Логотип ЦДТТ Юность">
+      </div>
+      <p class="header__title">Центр детского (юношеского) технического творчества</p>
+    </div>
+    <a href="#" class="header__signup-btn">Записаться</a>
+    <button class="header__menu-btn" id="burgerBtn" aria-expanded="false" aria-label="Меню">
+      <span class="header__menu-label">Меню</span>
+      <span class="header__menu-icon">
+        <span></span><span></span><span></span>
+      </span>
+    </button>
+  </div>
+
+  <nav class="header__nav" aria-label="Основная навигация">
+    <ul class="header__nav-list">
+      <li><a href="index.html" class="header__nav-link header__nav-link--active">Гл. страница</a></li>
+      <li><a href="about_us.html" class="header__nav-link">Основ. сведения</a></li>
+      <li><a href="news.html" class="header__nav-link">Новости</a></li>
+      <li><a href="group.html" class="header__nav-link">Коллектив</a></li>
+      <li><a href="document.html" class="header__nav-link">Документы</a></li>
+      <li><a href="contacts.html" class="header__nav-link">Контакты</a></li>
+    </ul>
+  </nav>
+
+  
+  <div class="header__dropdown" id="navDropdown">
+    <ul class="header__dropdown-list">
+      <li><a href="index.html" class="header__dropdown-link">Гл. страница</a></li>
+      <li><a href="about_us.html" class="header__dropdown-link">Основ. сведения</a></li>
+      <li><a href="news.html" class="header__dropdown-link">Новости</a></li>
+      <li><a href="group.html" class="header__dropdown-link">Коллектив</a></li>
+      <li><a href="document.html" class="header__dropdown-link">Документы</a></li>
+      <li><a href="contacts.html" class="header__dropdown-link">Контакты</a></li>
+    </ul>
+    <a href="#" class="header__dropdown-signup">Записаться</a>
+  </div>
+
+  
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-menu__list">
+      <li><a href="index.html" class="mobile-menu__link">Гл. страница</a></li>
+      <li><a href="about_us.html" class="mobile-menu__link">Осн. сведения</a></li>
+      <li><a href="news.html" class="mobile-menu__link">Новости</a></li>
+      <li><a href="group.html" class="mobile-menu__link">Коллектив</a></li>
+      <li><a href="document.html" class="mobile-menu__link">Документы</a></li>
+      <li><a href="contacts.html" class="mobile-menu__link">Контакты</a></li>
+      <li><a href="#" class="mobile-menu__link">Запись</a></li>
+    </ul>
+  </div>
+</header>
+
+
+<section class="hero" aria-label="Главное фото">
+  <img class="hero__image" src="assets/img/Hero.png" alt="Команда Юности">
+</section>
+
+<div class="caption">
+  <p class="caption__subtitle">Центр детского (юношеского) технического творчества</p>
+  <h1><span class="caption__main">«ЮНОСТЬ»</span></h1>
+</div>
+
+
+<section class="advantages" aria-labelledby="adv-title">
+  <div class="advantages__container">
+    <h2 class="advantages__title" id="adv-title">Преимущества обучения в нашем Центре</h2>
+    <div class="advantages__body">
+      <div class="advantages__photo-wrap">
+        <img class="advantages__photo" src="assets/img/img-general/advantages-trophies.png" alt="Кубки и награды">
+      </div>
+      <ul class="advantages__list">
+        <li class="advantages__item">
+          <strong>Использование самых современных образовательных технологий</strong>, которые обеспечивают доступ к мировым достижениям.
+        </li>
+        <li class="advantages__item">
+          <strong>Участие в конкурсах и соревнованиях</strong>, где наши ученики могут продемонстрировать свои достижения и сравнить свои силы с лучшими.
+        </li>
+        <li class="advantages__item">
+          <strong>Индивидуальная профессиональная ориентация</strong>, направленная на то, чтобы помочь детям и подросткам выбрать карьерный путь, соответствующий их интересам и талантам.
+        </li>
+      </ul>
+      <div class="advantages__icons" aria-hidden="true">
+        <img class="advantages__icon" src="assets/icons/icons-general/decor-laptop.png" alt="">
+        <img class="advantages__icon" src="assets/icons/icons-general/decor-trophy.png" alt="">
+        <img class="advantages__icon" src="assets/icons/icons-general/decor-compass.png" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="clubs" aria-labelledby="clubs-title">
+  <div class="clubs__container">
+    <img class="clubs__decor clubs__decor--robot" src="assets/icons/icons-general/icon-advantage-person.png" alt="" aria-hidden="true">
+    <img class="clubs__decor clubs__decor--sailboat" src="assets/icons/icons-general/icon-advantage-sailboat.png" alt="" aria-hidden="true">
+    <h2 class="clubs__title" id="clubs-title">Обучение осуществляется в следующих объединениях</h2>
+    <div class="clubs__grid">
+      <div class="clubs__item">
+        <div class="clubs__icon"><img src="assets/icons/icons-training/icon-club-01.svg" alt=""></div>
+        <p class="clubs__name">Ракетомодельный</p>
+      </div>
+      <div class="clubs__item">
+        <div class="clubs__icon"><img src="assets/icons/icons-training/icon-club-02.svg" alt=""></div>
+        <p class="clubs__name">Авиамодельный</p>
+      </div>
+      <div class="clubs__item">
+        <div class="clubs__icon"><img src="assets/icons/icons-training/icon-club-03.svg" alt=""></div>
+        <p class="clubs__name">Судомодельный</p>
+      </div>
+      <div class="clubs__item">
+        <div class="clubs__icon"><img src="assets/icons/icons-training/icon-club-04.svg" alt=""></div>
+        <p class="clubs__name">Робототехника и программирование</p>
+      </div>
+      <div class="clubs__item">
+        <div class="clubs__icon"><img src="assets/icons/icons-training/icon-club-05.svg" alt=""></div>
+        <p class="clubs__name">Компьютерный</p>
+      </div>
+      <div class="clubs__item">
+        <div class="clubs__icon"><img src="assets/icons/icons-training/icon-club-06.svg" alt=""></div>
+        <p class="clubs__name">Начальное моделирование</p>
+      </div>
+      <div class="clubs__item">
+        <div class="clubs__icon"><img src="assets/icons/icons-training/icon-club-07.svg" alt=""></div>
+        <p class="clubs__name">Радио-конструкторский</p>
+      </div>
+      <div class="clubs__item">
+        <div class="clubs__icon"><img src="assets/icons/icons-training/icon-club-08.svg" alt=""></div>
+        <p class="clubs__name">Техническое моделирование</p>
+      </div>
+      <div class="clubs__item">
+        <div class="clubs__icon"><img src="assets/icons/icons-training/icon-club-09.svg" alt=""></div>
+        <p class="clubs__name">Прикладное искусство</p>
+      </div>
+      <div class="clubs__item">
+        <div class="clubs__icon"><img src="assets/icons/icons-training/icon-club-10.svg" alt=""></div>
+        <p class="clubs__name">Начальное техническое моделирование</p>
+      </div>
+      <div class="clubs__item">
+        <div class="clubs__icon"><img src="assets/icons/icons-training/icon-club-11.svg" alt=""></div>
+        <p class="clubs__name">Начальное судомоделирование</p>
+      </div>
+      <div class="clubs__item">
+        <div class="clubs__icon"><img src="assets/icons/icons-training/icon-club-12.svg" alt=""></div>
+        <p class="clubs__name">Радиоуправление на судомоделях</p>
+      </div>
+      <div class="clubs__item clubs__item--wide">
+        <div class="clubs__icon"><img src="assets/icons/icons-training/icon-club-13.svg" alt=""></div>
+        <p class="clubs__name">Начальное ракетостроение</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="profession" aria-labelledby="prof-title">
+  <div class="profession__container">
+    <h2 class="profession__title" id="prof-title">От модели — к профессии</h2>
+
+    <div class="profession__block">
+      <img class="profession__icon" src="assets/icons/icons-model/icon-profession-1.svg" alt="">
+      <p class="profession__text">Технические виды спорта являются уникальным направлением творческой деятельности, они соединяют в себе науку, технику, спорт, а также учат творчески мыслить и изобретать, применять полученные знания на практике.</p>
+    </div>
+
+    <hr class="profession__divider profession__divider--narrow">
+    <img class="profession__photo" src="assets/img/img-general/profession-workshop.png" alt="Занятие в мастерской">
+
+    <hr class="profession__divider profession__divider--wide">
+    <img class="profession__photo" src="assets/img/img-general/profession-team.png" alt="Команда воспитанников">
+
+    <div class="profession__block profession__block--reverse">
+      <p class="profession__text profession__text--right">В Центре «Юность» особенное место уделяется спортивно-техническим направлениям – это ракетомодельное, авиамодельное и судомодельное. Именно здесь воспитанники приобретают наиболее ценные знания на опыте соревновательной деятельности.</p>
+      <img class="profession__icon" src="assets/icons/icons-model/icon-profession-2.svg" alt="">
+    </div>
+
+    <hr class="profession__divider profession__divider--wide">
+
+    <div class="profession__block profession__block--single">
+      <img class="profession__icon" src="assets/icons/icons-model/icon-profession-3.svg" alt="">
+      <p class="profession__text profession__text--center">Занятия в технических объединениях помогают воспитанникам определиться с будущей профессией по техническим специальностям.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="gallery" aria-label="Галерея фотографий">
+  <div class="gallery__wrapper">
+    <button class="gallery__btn" id="galPrev" aria-label="Назад">&#8249;</button>
+    <div class="gallery__viewport">
+      <div class="gallery__track" id="galTrack">
+        <div class="gallery__slide"><img src="assets/img/gallery/gallery-1.jpg" alt="Фото 1"></div>
+        <div class="gallery__slide"><img src="assets/img/gallery/gallery-2.jpg" alt="Фото 2"></div>
+        <div class="gallery__slide"><img src="assets/img/gallery/gallery-3.jpg" alt="Фото 3"></div>
+        <div class="gallery__slide"><img src="assets/img/gallery/gallery-4.jpg" alt="Фото 4"></div>
+        <div class="gallery__slide"><img src="assets/img/gallery/gallery-5.jpg" alt="Фото 5"></div>
+        <div class="gallery__slide"><img src="assets/img/gallery/gallery-6.jpg" alt="Фото 6"></div>
+      </div>
+    </div>
+    <button class="gallery__btn" id="galNext" aria-label="Вперёд">&#8250;</button>
+  </div>
+</section>
+
+
+<footer class="footer" id="signup">
+  <div class="footer__container">
+    <div class="footer__cols-wrapper">
+      <div class="footer__col">
+        <div class="footer__section-head">
+          <div class="footer__icon"><img src="assets/icons/icons-futer/maps.png" alt=""></div>
+          <span class="footer__label">Наш адрес:</span>
+        </div>
+        <p class="footer__text">Сергиев Посад, пр-д Новозагорский, д. 3А<br>(Клементьевский пос., ЦДТТ «Юность»)</p>
+      </div>
+      <div class="footer__col">
+        <div class="footer__section-head">
+          <div class="footer__icon"><img src="assets/icons/icons-futer/mail.png" alt=""></div>
+          <span class="footer__label">Напишите нам:</span>
+        </div>
+        <a href="mailto:sepo_mbudo_unost@mosreg.ru" class="footer__text">sepo_mbudo_unost@mosreg.ru</a>
+      </div>
+      <div class="footer__col">
+        <div class="footer__section-head">
+          <div class="footer__icon"><img src="assets/icons/icons-futer/tel.png" alt=""></div>
+          <span class="footer__label">Позвоните нам:</span>
+        </div>
+        <div class="footer__phones">
+          <p class="footer__phone">+7 (496) 540-49-38</p>
+          <p class="footer__phone">+7 (916) 300-44-20</p>
+          <p class="footer__phone">+7 (496) 549-04-91 <span class="footer__phone-note">(вахта)</span></p>
+        </div>
+      </div>
+      <div class="footer__col">
+        <div class="footer__section-head">
+          <div class="footer__icon"><img src="assets/icons/icons-futer/vk.png" alt=""></div>
+          <span class="footer__label">Мы в ВКонтакте:</span>
+        </div>
+        <div class="footer__social">
+          <a href="https://vk.com/unostcdtt" class="footer__social-link">@unostcdtt</a>
+          <a href="https://vk.com/hashtag/центрюностьпосад" class="footer__social-link">#центрюностьпосад</a>
+        </div>
+      </div>
+    </div>
+    <hr class="footer__bottom-divider">
+    <p class="footer__copyright">© 2015–2025 Управление образования Сергиево-Посадского муниципального района · МБУДО Центр детского (юношеского) технического творчества «Юность»</p>
+  </div>
+</footer>
+</div>
+
+<script src="script/script.js"></script>
+</body>
+</html>

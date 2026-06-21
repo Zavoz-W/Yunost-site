@@ -1,0 +1,2408 @@
+// ===== ОБЩИЕ СТИЛИ =====
+
+@font-face
+    font-family: 'Montserrat'
+    src: url('../fonts/Montserrat-Bold.woff2') format('woff2')
+    font-weight: 700
+    font-display: swap
+@font-face
+    font-family: 'Roboto'
+    src: url('../fonts/Roboto-Regular.woff2') format('woff2')
+    font-weight: 400
+    font-display: swap
+@font-face
+    font-family: 'Roboto'
+    src: url('../fonts/Roboto-Bold.woff2') format('woff2')
+    font-weight: 700
+    font-display: swap
+@font-face
+    font-family: 'Inter'
+    src: url('../fonts/Inter-Regular.woff2') format('woff2')
+    font-weight: 400
+    font-display: swap
+@font-face
+    font-family: 'Inter'
+    src: url('../fonts/Inter-Bold.woff2') format('woff2')
+    font-weight: 700
+    font-display: swap
+@font-face
+    font-family: 'Nunito'
+    src: url('../fonts/Nunito-Bold.woff2') format('woff2')
+    font-weight: 700
+    font-display: swap
+
+html
+    overflow-x: hidden
+    background: url("../assets/img/background/cloud_bg.png") center top / cover no-repeat fixed
+body
+    margin: 0
+    overflow-x: hidden
+    font-family: 'Roboto', sans-serif
+
+.sky-bg
+    width: 100%
+    max-width: 1440px
+    margin: 0 auto
+    background: url("../assets/img/background/bg.png") center top repeat-y
+    background-size: 2100px auto
+.advantages__title,
+.clubs__title,
+.profession__title
+    font-family: 'Montserrat', sans-serif
+    font-weight: 700
+    font-size: 48px
+    color: #000
+    text-align: center
+    line-height: 1.2
+    margin-bottom: 28px
+.clubs__title,
+.profession__title
+    margin-bottom: 52px
+
+// ===== HEADER =====
+
+.header
+    width: 100%
+    position: relative
+    z-index: 20
+.header__top
+    height: 110px
+    padding: 8px 50px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 40px
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.20) 100%), linear-gradient(90deg, #0905E5 0%, #05037F 100%)
+.header__left
+    display: flex
+    align-items: center
+    gap: 16px
+    flex: 1
+    min-width: 0
+.header__logo
+    flex-shrink: 0
+    width: 100px
+    height: 100px
+    border-radius: 50%
+    overflow: hidden
+.header__title
+    font-weight: 700
+    font-size: 20px
+    color: #fff
+    text-transform: uppercase
+    letter-spacing: .3px
+    line-height: 1.15
+    max-width: 380px
+.header__signup-btn
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 268px
+    height: 57px
+    flex-shrink: 0
+    background: #0905E5
+    border: 3px solid #000
+    border-radius: 50px
+    font-weight: 700
+    font-size: 24px
+    color: #fff
+    cursor: pointer
+    box-shadow: 4px 4px 4px rgba(0,0,0,.25)
+    transition: .2s
+.header__signup-btn:hover
+    background: #fff
+    color: #0905E5
+.header__menu-btn
+    display: none
+    align-items: center
+    gap: 10px
+    height: 44px
+    padding: 0 16px
+    background: #0905E5
+    border: 2px solid #000
+    border-radius: 10px
+    cursor: pointer
+    flex-shrink: 0
+    transition: .3s
+.header__menu-label
+    font-weight: 700
+    font-size: 18px
+    color: #fff
+.header__menu-icon
+    width: 22px
+    height: 16px
+    position: relative
+    display: flex
+    flex-direction: column
+.header__menu-icon span
+    display: block
+    width: 100%
+    height: 3px
+    background: #fff
+    border-radius: 2px
+    position: absolute
+    left: 0
+    transition: .3s
+.header__menu-icon span:nth-child(1)
+    top: 0
+.header__menu-icon span:nth-child(2)
+    top: 50%
+    transform: translateY(-50%)
+.header__menu-icon span:nth-child(3)
+    bottom: 0
+.header__menu-btn[aria-expanded="true"] .header__menu-icon span:nth-child(1)
+    top: 50%
+    transform: translateY(-50%) rotate(45deg)
+.header__menu-btn[aria-expanded="true"] .header__menu-icon span:nth-child(2)
+    opacity: 0
+.header__menu-btn[aria-expanded="true"] .header__menu-icon span:nth-child(3)
+    bottom: 50%
+    transform: translateY(50%) rotate(-45deg)
+.header__nav-list
+    display: flex
+    align-items: stretch
+    width: 100%
+    height: 40px
+    background: #fff
+    border-left: 1px solid #000
+    border-right: 1px solid #000
+    border-bottom: 1px solid #000
+    border-radius: 0 0 20px 20px
+    overflow: hidden
+.header__nav-list li
+    flex: 1
+    display: flex
+.header__nav-link
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    font-weight: 700
+    font-size: 20px
+    color: #000
+    border-right: 1px solid #000
+    transition: background .2s
+    text-align: center
+    padding: 0 4px
+    line-height: 1.1
+.header__nav-link:hover
+    background: #f0f0f0
+.header__nav-link--active
+    background: #0905E5
+    color: #fff
+.header__dropdown
+    max-height: 0
+    overflow: hidden
+    transition: max-height .4s ease
+    background: #fff
+    border: none
+.header__dropdown.is-open
+    max-height: 600px
+    border-left: 1px solid #000
+    border-right: 1px solid #000
+    border-bottom: 1px solid #000
+.header__dropdown-list
+    display: grid
+    grid-template-columns: 1fr 1fr
+.header__dropdown-link,
+.header__dropdown-signup
+    display: flex
+    align-items: center
+    justify-content: center
+    min-height: 70px
+    padding: 12px 20px
+    font-weight: 700
+    font-size: 20px
+    border-bottom: 1px solid #000
+    border-right: 1px solid #000
+    text-align: center
+    line-height: 1.2
+    transition: background .2s
+.header__dropdown-link:nth-child(even)
+    border-right: none
+.header__dropdown-link:hover,
+.header__dropdown-signup:hover
+    background: #f0f0f0
+.header__dropdown-signup
+    grid-column: 1 / -1
+    width: 100%
+    border-right: none
+    border-bottom: none
+.mobile-menu
+    display: none
+
+// ===== FOOTER =====
+
+.footer
+    background: #000
+    padding: 24px 0
+.footer__container
+    max-width: 1440px
+    margin: 0 auto
+    padding: 0 80px
+.footer__cols-wrapper
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: 60px 80px
+    max-width: 900px
+    margin: 0 auto
+.footer__col
+    display: flex
+    flex-direction: column
+    gap: 8px
+.footer__section-head
+    display: flex
+    align-items: center
+    gap: 10px
+    margin-bottom: 3px
+.footer__label
+    font-family: 'Roboto', sans-serif
+    font-weight: 700
+    font-size: 24px
+    color: #fff
+    white-space: nowrap
+.footer__icon
+    font-size: 28px
+    flex-shrink: 0
+.footer__icon img
+    width: 52px
+    height: 52px
+    object-fit: contain
+.footer__text,
+.footer__phone,
+.footer__social-link
+    font-family: 'Roboto', sans-serif
+    font-size: 20px
+    font-weight: 400
+    color: #fff
+    line-height: 1.4
+.footer__phones,
+.footer__social
+    display: flex
+    flex-direction: column
+    gap: 5px
+.footer__phone-note
+    font-weight: 400
+.footer__bottom-divider
+    border: none
+    border-top: 2px solid #fff
+    margin: 24px auto 16px
+    max-width: 906px
+.footer__copyright
+    font-family: 'Roboto', sans-serif
+    font-size: 14px
+    font-weight: 700
+    color: #fff
+    text-align: center
+    line-height: 1.6
+
+// ===== ГЛАВНАЯ =====
+
+.hero
+    width: 100%
+    height: 548px
+    margin-top: -40px
+    overflow: hidden
+.hero__image
+    width: 100%
+    height: 100%
+    object-fit: cover
+.caption
+    background: #0905E5
+    text-align: center
+    padding: 24px 40px 32px
+    border-radius: 0 0 32px 32px
+.caption__subtitle
+    font-family: 'Montserrat', sans-serif
+    font-weight: 700
+    font-size: 24px
+    letter-spacing: .5px
+    line-height: 1.5
+    color: rgba(255,255,255,.9)
+    text-transform: uppercase
+    margin-bottom: 12px
+.caption__main
+    font-family: 'Nunito', sans-serif
+    font-weight: 700
+    font-size: 64px
+    line-height: 1
+    color: #fff
+    text-transform: uppercase
+    letter-spacing: -1px
+    display: block
+.advantages
+    padding: 40px 0 16px
+.advantages__container
+    max-width: 1440px
+    margin: 0 auto
+    padding: 0 28px
+.advantages__body
+    display: grid
+    grid-template-columns: 600px 100px
+    gap: 8px 0
+    align-items: start
+    width: fit-content
+    margin: 0 auto
+.advantages__photo-wrap
+    grid-column: 1 / -1
+    justify-self: center
+    max-width: 565px
+    width: 100%
+    margin-bottom: 32px
+.advantages__photo
+    width: 100%
+    height: 409px
+    border-radius: 10px
+    border: 2px solid #000
+    object-fit: cover
+.advantages__list
+    display: flex
+    flex-direction: column
+    gap: 24px
+    font-family: 'Inter', sans-serif
+    font-size: 24px
+    font-weight: 400
+    color: #000
+    line-height: 1.5
+    grid-column: 1
+.advantages__list strong
+    font-weight: 700
+.advantages__icons
+    display: flex
+    flex-direction: column
+    align-items: center
+    grid-column: 2
+    align-self: start
+    margin-left: -8px
+.advantages__icon
+    width: 100px
+    height: 100px
+    object-fit: contain
+    margin-bottom: 28px
+.advantages__icon:last-child
+    margin-bottom: 0
+.clubs
+    padding: 16px 20px 56px
+    position: relative
+    overflow: hidden
+.clubs__container
+    max-width: 1200px
+    margin: 0 auto
+    padding: 0 60px
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+.clubs__decor
+    position: absolute
+    pointer-events: none
+    z-index: 0
+    object-fit: contain
+.clubs__decor--robot
+    left: -100px
+    top: 50px
+    width: 340px
+    height: 340px
+.clubs__decor--sailboat
+    right: -100px
+    top: 20px
+    width: 380px
+    height: 380px
+.clubs__title
+    position: relative
+    z-index: 1
+.clubs__grid
+    display: grid
+    grid-template-columns: repeat(3, minmax(0, 1fr))
+    gap: 20px
+    position: relative
+    z-index: 1
+    justify-items: center
+    width: 100%
+    max-width: 900px
+.clubs__item
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 12px
+    text-align: center
+    min-width: 0
+.clubs__item--wide
+    grid-column: 1 / -1
+.clubs__icon
+    width: 80px
+    height: 80px
+    display: flex
+    align-items: center
+    justify-content: center
+.clubs__icon img,
+.clubs__icon svg
+    width: 100%
+    height: 100%
+    object-fit: contain
+.clubs__name
+    font-family: 'Inter', sans-serif
+    font-size: 20px
+    font-weight: 400
+    color: #333
+    line-height: 1.5
+.profession
+    padding: 40px 140px 56px
+    position: relative
+    overflow: hidden
+.profession__container
+    max-width: 1160px
+    margin: 0 auto
+    position: relative
+.profession__title
+    position: relative
+    z-index: 10
+.profession__block
+    display: grid
+    grid-template-columns: 100px 1fr
+    gap: 20px
+    padding: 28px 0
+    position: relative
+    z-index: 1
+    align-items: start
+.profession__block--reverse
+    grid-template-columns: 1fr 100px
+.profession__block--single
+    display: flex
+    flex-direction: column
+    align-items: center
+    max-width: 900px
+    margin: 28px auto 0
+    gap: 20px
+.profession__icon
+    width: 100px
+    height: 100px
+    object-fit: contain
+.profession__text
+    font-family: 'Inter', sans-serif
+    font-size: 24px
+    font-weight: 400
+    color: #000
+    line-height: 1.5
+.profession__text--center
+    text-align: center
+.profession__photo
+    width: 565px
+    height: 228px
+    object-fit: cover
+    border-radius: 10px
+    border: 2px solid #000
+    display: block
+    margin: 0 auto
+    max-width: 100%
+.profession__divider
+    border: none
+    border-top: 2.5px solid #000
+    margin: 12px auto
+.profession__divider--narrow
+    width: 54%
+.profession__divider--wide
+    width: 97%
+.gallery
+    padding: 10px 0
+    background: #f4f4f4
+    border-top: 3px solid #000
+    border-bottom: 3px solid #000
+.gallery__wrapper
+    display: flex
+    align-items: center
+    padding: 0 48px
+    max-width: 1440px
+    margin: 0 auto
+.gallery__btn
+    flex-shrink: 0
+    width: 56px
+    height: 56px
+    background: none
+    border: none
+    font-size: 72px
+    font-weight: 900
+    line-height: 1
+    color: #111
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: color .2s
+.gallery__btn:hover
+    color: #0905E5
+.gallery__viewport
+    flex: 1
+    overflow: hidden
+    padding: 10px 0
+.gallery__track
+    display: flex
+    gap: 20px
+    transition: transform .4s ease
+.gallery__slide
+    flex: 0 0 calc((100% - 20px) / 2)
+.gallery__slide img
+    width: 100%
+    height: 280px
+    object-fit: cover
+    border-radius: 14px
+    border: 3px solid #000
+
+// ===== Media 768 =====
+
+@media (max-width: 768px)
+    .header__top
+        padding: 8px 16px
+        gap: 16px
+        height: auto
+        min-height: 86px
+    .header__logo
+        width: 70px
+        height: 70px
+    .header__title
+        font-size: 14px
+        max-width: 260px
+    .header__signup-btn
+        display: none
+    .header__menu-btn
+        display: flex
+    .header__nav
+        display: none
+    .hero
+        height: 380px
+        margin-top: 0
+    .caption
+        padding: 20px 24px 40px
+        border-radius: 0 0 20px 20px
+    .caption__subtitle
+        font-size: 20px
+    .caption__main
+        font-size: 48px
+    .advantages
+        padding: 40px 0
+    .advantages__title,
+    .clubs__title,
+    .profession__title
+        font-size: 32px
+        margin-bottom: 36px
+    .advantages__body
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 24px
+        width: 100%
+    .advantages__photo-wrap
+        max-width: 100%
+        margin-bottom: 0
+    .advantages__photo
+        height: 350px
+        width: 668px
+        max-width: 100%
+    .advantages__list
+        font-size: 20px
+        gap: 16px
+        width: 100%
+    .advantages__icons
+        display: none
+    .clubs
+        padding: 36px 16px 52px
+    .clubs__container
+        padding: 0 24px
+    .clubs__decor
+        display: none
+    .clubs__grid
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    .clubs__icon
+        width: 100px
+        height: 100px
+    .clubs__name
+        font-size: 20px
+    .profession
+        padding: 40px 50px 52px
+    .profession__block,
+    .profession__block--reverse
+        grid-template-columns: 1fr
+    .profession__text,
+    .profession__text--center
+        font-size: 20px
+        text-align: center
+    .profession__photo
+        width: 100%
+        height: 260px
+    .profession__icon
+        margin: 0 auto
+    .gallery__slide
+        flex: 0 0 100%
+    .gallery__slide img
+        height: 280px
+    .gallery__wrapper
+        padding: 0 32px
+    .footer__container
+        padding: 0 40px
+    .footer__cols-wrapper
+        grid-template-columns: 1fr
+        gap: 32px
+    .footer__label
+        font-size: 20px
+    .footer__text,
+    .footer__phone,
+    .footer__social-link
+        font-size: 16px
+
+// ===== Media 393 =====
+
+@media (max-width: 393px)
+    .header__top
+        padding: 6px 12px
+        gap: 12px
+    .header__logo
+        width: 54px
+        height: 54px
+    .header__title
+        font-size: 12px
+        line-height: 1.1
+    .header__signup-btn
+        display: none
+    .header__menu-btn
+        display: flex
+        height: 36px
+        padding: 0 10px
+    .header__menu-label
+        font-size: 15px
+    .header__nav
+        display: none
+    .header__dropdown
+        display: none !important
+    .mobile-menu
+        display: block
+        max-height: 0
+        overflow: hidden
+        transition: max-height .4s ease
+        background: #fff
+        border: 2px solid #000
+        border-top: none
+    .mobile-menu.is-open
+        max-height: 600px
+    .mobile-menu__list
+        display: flex
+        flex-direction: column
+    .mobile-menu__link
+        display: flex
+        align-items: center
+        justify-content: center
+        min-height: 48px
+        padding: 10px 16px
+        font-family: 'Roboto', sans-serif
+        font-weight: 700
+        font-size: 18px
+        color: #000
+        border-bottom: 1px solid #000
+        text-align: center
+        line-height: 1.2
+        transition: background .2s
+    .mobile-menu__link:hover
+        background: #f0f0f0
+    .mobile-menu__link:last-child
+        border-bottom: none
+    .hero
+        height: 240px
+    .caption
+        padding: 16px 16px 28px
+        border-radius: 0 0 16px 16px
+    .caption__subtitle
+        font-size: 14px
+    .caption__main
+        font-size: 28px
+    .advantages__title,
+    .clubs__title,
+    .profession__title
+        font-size: 24px
+    .advantages__list
+        font-size: 14px
+    .advantages__photo
+        height: 200px
+    .advantages__icons
+        display: none
+    .clubs__icon
+        width: 78px
+        height: 78px
+    .clubs__name
+        font-size: 14px
+    .profession
+        padding: 40px 10px 52px
+    .profession__text,
+    .profession__text--center
+        font-size: 14px
+    .profession__icon
+        width: 60px
+        height: 60px
+    .profession__photo
+        height: 180px
+    .gallery__wrapper
+        padding: 0 16px
+    .gallery__btn
+        font-size: 40px
+        width: 32px
+    .gallery__slide img
+        height: 200px
+    .footer__container
+        padding: 0 20px
+    .footer__label
+        font-size: 18px
+    .footer__text,
+    .footer__phone,
+    .footer__social-link
+        font-size: 14px
+    .footer__copyright
+        font-size: 11px
+
+// ===== Страница О нас =====
+
+.section-title
+    font-family: 'Montserrat', sans-serif
+    font-weight: 700
+    font-size: 48px
+    color: #000
+    text-align: center
+    line-height: 1.2
+    margin-bottom: 32px
+.page-title
+    background: #fff
+    padding: 28px 40px 20px
+    text-align: center
+    border-bottom: 2px solid #000
+.page-title__text
+    font-family: 'Montserrat', sans-serif
+    font-weight: 700
+    font-size: 64px
+    color: #000
+    line-height: 1.1
+.about-hero
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.20) 100%), linear-gradient(90deg, #0905E5 0%, #05037F 100%)
+    width: 100%
+    padding: 32px 40px
+    text-align: center
+    box-sizing: border-box
+    border-radius: 0 0 32px 32px
+.about-hero__inner
+    max-width: 900px
+    margin: 0 auto
+.about-hero__org-type
+    font-family: 'Montserrat', sans-serif
+    font-weight: 700
+    font-size: 42px
+    color: #fff
+    line-height: 1.4
+    margin-bottom: 8px
+.about-hero__org-name
+    font-family: 'Montserrat', sans-serif
+    font-weight: 700
+    font-size: 42px
+    color: #fff
+    line-height: 1.3
+    margin-bottom: 8px
+.about-hero__brand
+    font-family: 'Nunito', sans-serif
+    font-weight: 700
+    font-size: 64px
+    color: #fff
+    line-height: 1
+    letter-spacing: -1px
+    margin-bottom: 8px
+.about-hero__short
+    font-family: 'Montserrat', sans-serif
+    font-weight: 700
+    font-size: 36px
+    color: rgba(255,255,255,.85)
+.info-block
+    padding: 0
+    margin-top: 32px
+.info-block__container
+    width: 100%
+    box-sizing: border-box
+    display: flex
+    align-items: stretch
+    border-top: 1px solid #000
+    border-bottom: 1px solid #000
+.info-list
+    flex: 1
+    min-width: 0
+    background: #F9F9F9
+    padding: 32px 40px
+    display: flex
+    flex-direction: column
+    gap: 16px
+    box-sizing: border-box
+.info-list__row
+    display: flex
+    flex-wrap: wrap
+    gap: 0 8px
+    font-family: 'Inter', sans-serif
+    font-size: 20px
+    line-height: 1.5
+.info-list__label
+    font-weight: 700
+    color: #000
+.info-list__value
+    font-weight: 400
+    color: #000
+.info-list__row--solo .info-list__label
+    font-weight: 700
+.info-block__img-wrap
+    flex-shrink: 0
+    width: 360px
+    display: flex
+    flex-direction: column
+    border: 2px solid #000
+    border-radius: 12px
+    overflow: hidden
+    margin: 20px 32px 20px 0
+    align-self: center
+.info-block__img
+    width: 100%
+    flex: 1
+    min-height: 200px
+    object-fit: cover
+    display: block
+    max-width: 100%
+.info-block__img-caption
+    display: block
+    width: 100%
+    background: #0905E5
+    color: #fff
+    font-family: 'Inter', sans-serif
+    font-weight: 700
+    font-size: 20px
+    text-align: center
+    padding: 12px 16px
+    box-sizing: border-box
+    cursor: pointer
+    text-decoration: none
+    transition: background .2s
+    flex-shrink: 0
+.info-block__img-caption:hover
+    background: #0702b0
+.info-block__divider
+    border: none
+    border-top: 2px solid #000
+    width: 90%
+    max-width: 950px
+    margin: 24px auto 0
+.directions
+    padding: 40px 0
+    border-bottom: 2px solid #000
+.directions__container
+    max-width: 1200px
+    margin: 0 auto
+    padding: 0 60px
+.directions__title-row
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 24px
+    margin-bottom: 32px
+.directions__title-row .section-title
+    margin-bottom: 0
+.directions__decor
+    flex-shrink: 0
+    width: 80px
+    height: 100px
+    object-fit: contain
+.directions__intro
+    font-family: 'Inter', sans-serif
+    font-size: 24px
+    color: #000
+    line-height: 1.5
+    margin-bottom: 16px
+    text-align: center
+.directions__body
+    display: flex
+    align-items: stretch
+    gap: 0
+    margin-top: 24px
+    background: #ececec
+    border: 2px solid #000
+    border-radius: 12px
+    overflow: hidden
+.directions__list
+    flex: 1
+    list-style: disc
+    padding: 24px 24px 24px 48px
+    display: flex
+    flex-direction: column
+    gap: 8px
+    font-family: 'Inter', sans-serif
+    font-size: 24px
+    color: #000
+    line-height: 1.4
+    align-self: center
+.directions__img-wrap
+    flex-shrink: 1
+    flex-basis: 340px
+    width: 340px
+    min-width: 180px
+    display: flex
+    flex-direction: column
+    border-left: 2px solid #000
+    align-self: stretch
+    overflow: hidden
+.directions__img
+    width: 100%
+    flex: 1
+    object-fit: cover
+    display: block
+    min-height: 0
+    border-radius: 0
+.directions__img-caption
+    display: block
+    width: 100%
+    background: #0905E5
+    color: #fff
+    font-family: 'Inter', sans-serif
+    font-weight: 700
+    font-size: 24px
+    text-align: center
+    padding: 10px 14px
+    box-sizing: border-box
+    flex-shrink: 0
+.section-divider
+    border: none
+    border-top: 2px solid #000
+    width: 950px
+    max-width: calc(100% - 280px)
+    margin: 32px auto 0
+    display: block
+.teachers
+    padding: 40px 0
+    border-bottom: 2px solid #000
+.teachers__container
+    max-width: 1200px
+    margin: 0 auto
+    padding: 0 140px
+.teachers__text
+    font-family: 'Inter', sans-serif
+    font-size: 24px
+    color: #000
+    line-height: 1.5
+    text-align: center
+    margin-bottom: 32px
+.teachers__photos
+    display: flex
+    gap: 24px
+.teachers__photo-wrap
+    flex: 1
+.teachers__photo
+    width: 100%
+    aspect-ratio: 4/3
+    object-fit: cover
+    border-radius: 10px
+    border: 2px solid #000
+.sports
+    padding: 40px 0
+.sports__container
+    max-width: 1200px
+    margin: 0 auto
+    padding: 0 140px
+.sports__text
+    font-family: 'Inter', sans-serif
+    font-size: 24px
+    color: #000
+    line-height: 1.5
+    text-align: center
+    margin-bottom: 16px
+.sports__body
+    display: flex
+    align-items: center
+    gap: 48px
+    margin-top: 24px
+    background: linear-gradient(90deg, #0905E5 0%, #05037F 100%)
+    width: 100%
+    border-top: 2px solid #000
+    border-bottom: 2px solid #000
+    padding: 32px 48px 32px 48px
+    box-sizing: border-box
+.sports__ranks
+    flex: 1
+    list-style: none
+    display: flex
+    flex-direction: column
+    gap: 10px
+    font-family: 'Inter', sans-serif
+    font-size: 24px
+    color: #fff
+    line-height: 1.4
+    min-width: 0
+.sports__ranks strong
+    color: #fff
+    font-weight: 700
+    font-size: 28px
+.sports__img-wrap
+    flex-shrink: 1
+    flex-basis: 440px
+    width: 440px
+    max-width: 440px
+    min-width: 200px
+    height: 250px
+    border: 2px solid #000
+    border-radius: 12px
+    overflow: hidden
+    order: -1
+.sports__img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    object-position: center
+    display: block
+.sports-divider
+    border: none
+    border-top: 2px solid #000
+    width: 950px
+    max-width: calc(100% - 280px)
+    margin: 32px auto 0
+    display: block
+.students
+    padding: 40px 0 80px
+.students__container
+    max-width: 1200px
+    margin: 0 auto
+    padding: 0 140px
+.students__title-row
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 32px
+    margin-bottom: 24px
+.students__title-row .section-title
+    margin-bottom: 0
+.students__decor-robot
+    flex-shrink: 0
+    width: 200px
+    object-fit: contain
+    margin-left: -60px
+    z-index: 1
+.students__decor-trophy
+    flex-shrink: 0
+    width: 200px
+    object-fit: contain
+    margin-right: -60px
+    z-index: 1
+.students__intro
+    font-family: 'Inter', sans-serif
+    font-size: 24px
+    color: #000
+    line-height: 1.5
+    text-align: center
+    margin-bottom: 32px
+.students__gallery
+    display: flex
+    flex-direction: column
+    gap: 16px
+    margin-bottom: 32px
+.students__photo
+    width: 100%
+    max-width: 500px
+    height: 250px
+    object-fit: cover
+    border-radius: 10px
+    border: 2px solid #000
+    margin: 0 auto
+.students__text-block
+    display: flex
+    flex-direction: column
+    gap: 16px
+.students__text
+    font-family: 'Inter', sans-serif
+    font-size: 24px
+    color: #000
+    line-height: 1.5
+    text-align: center
+
+// ===== Страница О нас медиа =====
+
+@media (max-width: 768px)
+    .page-title
+        padding: 20px 24px 16px
+    .page-title__text
+        font-size: 48px
+    .section-title
+        font-size: 32px
+    .about-hero
+        padding: 24px
+    .about-hero__org-type
+        font-size: 24px
+    .about-hero__org-name
+        font-size: 24px
+    .about-hero__brand
+        font-size: 40px
+    .about-hero__short
+        font-size: 20px
+    .info-block__container
+        flex-direction: column-reverse
+        gap: 20px
+    .info-block__img-wrap
+        flex-shrink: 0
+        width: calc(100% - 48px)
+        margin: 0 24px
+        border-radius: 12px
+        align-self: auto
+    .info-block__img
+        min-height: 260px
+        width: 100%
+        object-fit: cover
+    .info-list
+        flex: none
+        width: 100%
+        padding: 24px
+    .info-list__row
+        font-size: 20px
+    .info-block__img-caption
+        font-size: 18px
+    .info-block__divider
+        width: 90%
+        max-width: 950px
+        margin: 16px auto 0
+    .directions__container
+        padding: 0
+    .directions__title-row
+        gap: 16px
+        padding: 0 24px
+    .directions__intro
+        padding: 0 24px
+    .teachers__container,
+    .sports__container,
+    .students__container
+        padding: 0 24px
+    .directions__decor
+        display: none
+    .directions__body
+        flex-direction: column-reverse
+        gap: 0
+        border-radius: 12px
+        overflow: hidden
+        margin-left: 16px
+        margin-right: 16px
+    .directions__list
+        font-size: 20px
+        padding: 16px 16px 16px 36px
+        align-self: auto
+    .directions__img-wrap
+        flex-shrink: 0
+        flex-basis: auto
+        width: 100%
+        min-width: 0
+        border-left: none
+        border-bottom: 2px solid #000
+        align-self: auto
+    .directions__img
+        flex: none
+        width: 100%
+        height: 165px
+        min-height: unset
+        max-height: unset
+    .directions__img-caption
+        font-size: 20px
+    .section-divider
+        margin: 24px auto 0
+        width: 90%
+    .directions__intro,
+    .teachers__text,
+    .sports__text,
+    .students__intro,
+    .students__text
+        font-size: 20px
+    .sports__ranks
+        font-size: 20px
+        padding: 0
+    .sports__ranks strong
+        font-size: 24px
+    .sports__body
+        flex-direction: column
+        padding: 24px
+        gap: 24px
+    .sports__img-wrap
+        width: 100%
+        max-width: 440px
+        height: 250px
+        border-radius: 12px
+        border: 2px solid #000
+        overflow: hidden
+        order: -1
+        margin: 0 auto
+        min-width: 0
+        flex-shrink: 1
+    .sports__img
+        width: 100%
+        height: 100%
+        object-fit: cover
+    .sports-divider
+        width: 90%
+        max-width: calc(100% - 100px)
+        margin: 24px auto 0
+    .students__photo
+        max-width: 100%
+        height: 220px
+    .teachers__photos
+        flex-direction: column
+        max-width: 480px
+        margin: 0 auto
+    .directions__container,
+    .teachers__container,
+    .sports__container,
+    .students__container
+        padding: 0 24px
+    .students__title-row
+        gap: 16px
+    .students__decor-robot
+        width: 100px
+        margin-left: -20px
+    .students__decor-trophy
+        width: 100px
+        margin-right: -20px
+    .students__photo
+        max-width: 500px
+        height: 250px
+        margin: 0 auto
+    .section-divider
+        max-width: calc(100% - 100px)
+
+@media (max-width: 393px)
+    .page-title
+        padding: 14px 16px 12px
+    .page-title__text
+        font-size: 24px
+    .section-title
+        font-size: 24px
+        margin-bottom: 20px
+    .about-hero
+        padding: 18px 16px
+    .about-hero__org-type
+        font-size: 16px
+    .about-hero__org-name
+        font-size: 16px
+    .about-hero__brand
+        font-size: 24px
+    .about-hero__short
+        font-size: 14px
+    .info-block__container,
+    .directions__container,
+    .teachers__container,
+    .sports__container,
+    .students__container
+        padding: 0 20px
+    .directions__container
+        padding: 0
+    .directions__title-row
+        padding: 0 20px
+    .directions__intro
+        padding: 0 20px
+    .directions__body
+        border-radius: 12px
+        overflow: hidden
+        margin-left: 12px
+        margin-right: 12px
+    .sports__body
+        flex-direction: column
+        padding: 16px
+        gap: 0
+        align-items: stretch
+    .section-divider
+        width: 90%
+        max-width: calc(100% - 40px)
+        margin: 40px auto 0
+    .students__title-row
+        gap: 8px
+    .students__decor-robot,
+    .students__decor-trophy
+        display: none
+    .students__photo
+        height: 180px
+    .info-block__container
+        flex-direction: column-reverse
+        gap: 16px
+    .info-block__img-wrap
+        flex-shrink: 0
+        width: calc(100% - 40px)
+        margin: 0 20px
+        border-radius: 12px
+        border: 2px solid #000
+        align-self: auto
+    .info-block__img
+        min-height: 200px
+    .info-list
+        flex: none
+        width: 100%
+        padding: 16px
+    .info-list__row
+        font-size: 14px
+        gap: 0 6px
+    .info-block__img-caption
+        font-size: 15px
+    .info-block__divider
+        width: 90%
+        max-width: 950px
+        margin: 12px auto 0
+    .directions__title-row
+        gap: 12px
+    .directions__decor
+        display: none
+    .directions__intro,
+    .teachers__text,
+    .sports__text,
+    .students__intro,
+    .students__text
+        font-size: 14px
+    .directions__list
+        font-size: 14px
+        padding: 12px 12px 12px 30px
+    .directions__body
+        flex-direction: column-reverse
+        gap: 0
+        border-radius: 12px
+        overflow: hidden
+        margin-left: 12px
+        margin-right: 12px
+    .directions__img-wrap
+        flex-shrink: 0
+        flex-basis: auto
+        width: 100%
+        min-width: 0
+        border-left: none
+        border-bottom: 2px solid #000
+        align-self: auto
+    .directions__img
+        flex: none
+        width: 100%
+        height: 120px
+        min-height: unset
+        max-height: unset
+    .directions__img-caption
+        font-size: 14px
+    .sports__ranks
+        font-size: 14px
+        padding: 0
+    .sports__ranks strong
+        font-size: 16px
+    .sports__img-wrap
+        width: 100%
+        min-width: 0
+        flex-shrink: 0
+        flex-basis: auto
+        order: -1
+        border-radius: 12px
+        border: 2px solid #000
+        overflow: hidden
+        margin-bottom: 16px
+    .sports__img
+        width: 100%
+        height: auto
+        display: block
+    .sports-divider
+        width: 90%
+        max-width: calc(100% - 40px)
+        margin: 24px auto 0
+
+// ===== Страница Новости =====
+
+.news-page
+    position: relative
+.news__title
+    font-family: 'Inter', sans-serif
+    font-weight: 700
+    font-size: 64px
+    color: #000
+    text-align: center
+    margin: 40px 0 30px
+.news__hero-wrap
+    width: 100%
+    margin-bottom: 20px
+.news__hero-img
+    width: 100%
+    height: auto
+    display: block
+    object-fit: cover
+    border-radius: 0
+.news__list-wrap
+    position: relative
+.news-page__rocket
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    width: 1800px
+    opacity: 0.12
+    pointer-events: none
+    z-index: 0
+.news__list
+    display: flex
+    flex-direction: column
+    gap: 20px
+    position: relative
+    z-index: 1
+.news-card
+    display: flex
+    align-items: stretch
+    background: rgba(248, 248, 248, 0.7)
+    border-radius: 8px
+    border: 2px solid #C8C8C8
+    overflow: hidden
+    max-height: 310px
+.news-card__content
+    flex: 1
+    padding: 28px 100px 28px 100px
+    display: flex
+    flex-direction: column
+    gap: 12px
+.news-card__title
+    font-family: 'Inter', sans-serif
+    font-weight: 700
+    font-size: 26px
+    color: #000
+    line-height: 1.2
+    flex-shrink: 0
+.news-card__text
+    font-family: 'Inter', sans-serif
+    font-weight: 400
+    font-size: 24px
+    color: #000
+    line-height: 1.5
+    overflow: hidden
+    display: -webkit-box
+    -webkit-line-clamp: 4
+    -webkit-box-orient: vertical
+.news-card__btn
+    display: inline-flex
+    align-items: center
+    gap: 8px
+    font-family: 'Inter', sans-serif
+    font-weight: 700
+    font-size: 24px
+    color: #000
+    background: none
+    border: none
+    cursor: pointer
+    padding: 0
+    margin-top: 4px
+    align-self: flex-start
+    flex-shrink: 0
+.news-card__btn-arrow
+    display: inline-block
+    width: 0
+    height: 0
+    border-top: 9px solid transparent
+    border-bottom: 9px solid transparent
+    border-left: 14px solid #000
+    border-radius: 3px
+    flex-shrink: 0
+.news-card__img-wrap
+    flex: 0 0 38%
+    margin-right: 50px
+    align-self: stretch
+.news-card__img
+    width: 100%
+    height: 100%
+    object-fit: cover
+    display: block
+    border: 2px solid #C8C8C8
+    border-radius: 6px
+.news__more-wrap
+    display: flex
+    justify-content: center
+    margin: 40px 0 60px
+.news__more-btn
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 365px
+    height: 50px
+    background: #0905E5
+    color: #fff
+    font-family: 'Inter', sans-serif
+    font-weight: 700
+    font-size: 26px
+    border: 2px solid #000
+    border-radius: 50px
+    cursor: pointer
+    transition: .2s
+.news__more-btn:hover
+    background: #fff
+    color: #0905E5
+
+// ===== Страница Новости — 768 =====
+
+@media (max-width: 768px)
+    .news-page__rocket
+        width: 900px
+        right: -60px
+        top: 50%
+        transform: translateY(-50%)
+    .news__title
+        font-size: 48px
+        margin: 32px 0 24px
+    .news__hero-wrap
+        margin-bottom: 20px
+    .news__hero-img
+        width: 100%
+        height: auto
+    .news__list
+        gap: 20px
+    .news-card
+        flex-direction: row
+        max-height: 310px
+    .news-card__content
+        padding: 20px 20px 20px 50px
+        gap: 10px
+    .news-card__title
+        font-size: 20px
+    .news-card__text
+        font-size: 18px
+        -webkit-line-clamp: 4
+    .news-card__btn
+        font-size: 18px
+        font-weight: 700
+    .news-card__img-wrap
+        flex: 0 0 35%
+        margin-right: 0
+        align-self: stretch
+    .news-card__img
+        width: 100%
+        height: 100%
+        object-fit: cover
+    .news__more-btn
+        width: 240px
+        height: 50px
+        font-size: 24px
+
+// ===== Страница Новости — 393 =====
+
+@media (max-width: 393px)
+    .news-page__rocket
+        width: 500px
+        right: -40px
+        top: 50%
+        transform: translateY(-50%)
+        opacity: 0.10
+    .news__title
+        font-size: 24px
+        margin: 20px 0 16px
+    .news__hero-wrap
+        margin-bottom: 10px
+    .news__hero-img
+        height: auto
+        width: 100%
+    .news__list
+        gap: 10px
+    .news-card
+        flex-direction: row
+        max-height: 260px
+    .news-card__content
+        padding: 12px 12px 12px 10px
+        gap: 6px
+    .news-card__title
+        font-size: 16px
+    .news-card__text
+        font-size: 14px
+        -webkit-line-clamp: 3
+    .news-card__btn
+        font-size: 14px
+        font-weight: 700
+    .news-card__img-wrap
+        flex: 0 0 34%
+        margin-right: 0
+        align-self: stretch
+    .news-card__img
+        width: 100%
+        height: 100%
+        object-fit: cover
+    .news__more-btn
+        width: 175px
+        height: 50px
+        font-size: 16px
+
+// ===== Страница Коллектив =====
+
+.group-page
+    position: relative
+.group__title
+    font-family: 'Inter', sans-serif
+    font-weight: 700
+    font-size: 64px
+    color: #000
+    text-align: center
+    margin: 40px 0 30px
+.group__hero-wrap
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 40px
+    position: relative
+    margin: 0 auto 40px
+    max-width: 1200px
+    padding: 0 40px
+.group__photos
+    display: flex
+    gap: 24px
+    justify-content: center
+    flex-shrink: 0
+.group__photo
+    width: 350px
+    height: 350px
+    object-fit: cover
+    border-radius: 12px
+    border: 2px solid #000
+    display: block
+    flex-shrink: 0
+.group__decor
+    width: 180px
+    height: 180px
+    object-fit: contain
+    flex-shrink: 0
+    opacity: 0.85
+.group__decor--rocket
+    order: -1
+.group__decor--robot
+    order: 1
+.group__director-card
+    background: transparent
+    border: 3px solid #000
+    border-radius: 12px
+    max-width: 1200px
+    margin: 0 auto 0
+    position: relative
+    overflow: hidden
+.group__director-inner
+    padding: 36px 80px 40px
+    position: relative
+    z-index: 1
+.group__director-role
+    font-family: 'Inter', sans-serif
+    font-weight: 700
+    font-size: 32px
+    color: #000
+    text-align: center
+    margin-bottom: 8px
+.group__director-name
+    font-family: 'Inter', sans-serif
+    font-weight: 400
+    font-size: 32px
+    color: #000
+    text-align: center
+    margin-bottom: 24px
+.group__director-text
+    font-family: 'Inter', sans-serif
+    font-weight: 400
+    font-size: 24px
+    color: #000
+    line-height: 1.6
+    margin-bottom: 16px
+.group__director-bg-img
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 640px
+    height: 640px
+    opacity: 0.07
+    pointer-events: none
+    z-index: 0
+    img
+        width: 100%
+        height: 100%
+        object-fit: contain
+.group__contacts-bar
+    background: #0905E5
+    display: flex
+    align-items: center
+    justify-content: center
+.group__contacts-bar--full
+    width: 100%
+    min-height: 150px
+    padding: 20px 0
+.group__contacts-bar--card
+    min-height: 150px
+    padding: 20px 0
+    border-radius: 0 0 10px 10px
+.group__contacts-bar-inner
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 10px
+    width: 100%
+    max-width: 900px
+    padding: 0 40px
+.group__contacts-label
+    font-family: 'Inter', sans-serif
+    font-weight: 700
+    font-size: 32px
+    color: #fff
+    text-align: center
+.group__contacts-row
+    display: flex
+    flex-wrap: wrap
+    gap: 24px 80px
+    align-items: flex-start
+    justify-content: center
+.group__contacts-item
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 4px
+.group__contacts-icon-wrap
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 44px
+    height: 44px
+    margin: 0 auto
+.group__contacts-title
+    font-family: 'Inter', sans-serif
+    font-weight: 400
+    font-size: 32px
+    color: #fff
+    text-align: center
+.group__contacts-icon
+    width: 100%
+    height: 100%
+    object-fit: contain
+    flex-shrink: 0
+.group__contacts-value
+    font-family: 'Inter', sans-serif
+    font-weight: 400
+    font-size: 24px
+    color: #fff
+.group__staff-section
+    display: flex
+    align-items: center
+    gap: 0
+    max-width: 1200px
+    margin: 40px auto 60px
+    position: relative
+    padding: 0 40px
+.group__staff-arrow
+    flex-shrink: 0
+    width: 56px
+    height: 56px
+    background: none
+    border: none
+    font-size: 72px
+    font-weight: 900
+    line-height: 1
+    color: #111
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: color .2s
+    z-index: 2
+.group__staff-arrow:hover
+    color: #0905E5
+.group__staff-arrow:disabled
+    cursor: default
+.group__staff-card
+    flex: 1
+    background: transparent
+    border: 3px solid #000
+    border-radius: 12px
+    overflow: hidden
+    display: flex
+    flex-direction: column
+.group__staff-photo-wrap
+    width: 100%
+    display: flex
+    justify-content: center
+    padding: 30px 30px 20px
+    flex-shrink: 0
+.group__staff-photo
+    width: 426px
+    height: 350px
+    object-fit: cover
+    border-radius: 10px
+    border: 2px solid #000
+    display: block
+    max-width: 100%
+.group__staff-info
+    padding: 0 80px 0
+    flex: 1
+    position: relative
+.group__staff-role
+    font-family: 'Inter', sans-serif
+    font-weight: 700
+    font-size: 32px
+    color: #000
+    text-align: center
+    margin-bottom: 8px
+.group__staff-name
+    font-family: 'Inter', sans-serif
+    font-weight: 400
+    font-size: 32px
+    color: #000
+    text-align: center
+    margin-bottom: 20px
+.group__staff-text
+    font-family: 'Inter', sans-serif
+    font-weight: 400
+    font-size: 24px
+    color: #000
+    line-height: 1.6
+    margin-bottom: 24px
+    position: relative
+    z-index: 1
+.group__staff-bg-img
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 340px
+    height: 340px
+    opacity: 0.07
+    pointer-events: none
+    z-index: 0
+    img
+        width: 100%
+        height: 100%
+        object-fit: contain
+
+// ===== Страница Коллектив — 768 =====
+
+@media (max-width: 768px)
+    .group__title
+        font-size: 48px
+        margin: 32px 0 24px
+    .group__hero-wrap
+        gap: 24px
+        padding: 0 20px
+    .group__photos
+        gap: 0
+    .group__photo
+        width: 330px
+        height: 330px
+        &:last-child
+            display: none
+    .group__decor
+        width: 150px
+        height: 150px
+    .group__director-inner
+        padding: 28px 40px 32px
+    .group__director-role
+        font-size: 28px
+    .group__director-name
+        font-size: 28px
+    .group__director-text
+        font-size: 20px
+    .group__director-bg-img
+        width: 320px
+        height: 320px
+    .group__contacts-bar--full
+        min-height: 150px
+    .group__contacts-bar--card
+        min-height: 150px
+    .group__contacts-label
+        font-size: 28px
+    .group__contacts-title
+        font-size: 28px
+    .group__contacts-value
+        font-size: 20px
+    .group__contacts-value--email
+        font-size: 18px
+    .group__contacts-row
+        gap: 20px 40px
+    .group__staff-section
+        padding: 0 20px
+        margin: 30px auto 40px
+    .group__staff-photo
+        width: 364px
+        height: 240px
+    .group__staff-info
+        padding: 0 40px 0
+    .group__staff-role
+        font-size: 28px
+    .group__staff-name
+        font-size: 28px
+    .group__staff-text
+        font-size: 20px
+    .group__staff-bg-img
+        width: 280px
+        height: 280px
+    .group__staff-arrow
+        font-size: 56px
+        width: 44px
+
+// ===== Страница Коллектив — 393 =====
+
+@media (max-width: 393px)
+    .group__title
+        font-size: 24px
+        margin: 20px 0 16px
+    .group__hero-wrap
+        gap: 0
+        padding: 0 12px
+        justify-content: center
+    .group__photos
+        gap: 0
+    .group__photo
+        width: 220px
+        height: 220px
+        &:last-child
+            display: none
+    .group__decor
+        display: none
+    .group__director-inner
+        padding: 20px 20px 24px
+    .group__director-role
+        font-size: 20px
+    .group__director-name
+        font-size: 20px
+    .group__director-text
+        font-size: 14px
+    .group__director-bg-img
+        width: 320px
+        height: 320px
+    .group__contacts-bar--full
+        min-height: 163px
+    .group__contacts-bar--card
+        min-height: 163px
+    .group__contacts-bar-inner
+        padding: 16px
+    .group__contacts-label
+        font-size: 20px
+    .group__contacts-title
+        font-size: 20px
+    .group__contacts-icon-wrap
+        width: 32px
+        height: 32px
+    .group__contacts-value
+        font-size: 16px
+    .group__contacts-value--email
+        font-size: 14px
+    .group__contacts-row
+        gap: 16px 32px
+    .group__staff-section
+        padding: 0 8px
+        margin: 20px auto 30px
+        gap: 0
+    .group__staff-photo
+        width: 220px
+        height: 150px
+    .group__staff-photo-wrap
+        padding: 20px 20px 16px
+    .group__staff-info
+        padding: 0 20px 0
+    .group__staff-role
+        font-size: 20px
+    .group__staff-name
+        font-size: 20px
+    .group__staff-text
+        font-size: 14px
+    .group__staff-bg-img
+        width: 280px
+        height: 280px
+    .group__staff-arrow
+        font-size: 44px
+        width: 32px
+
+// ===== Страница Документы =====
+
+.doc-page__heading
+    font-size: 64px
+.doc-page__hero-wrap
+    width: 100%
+    overflow: hidden
+.doc-page__hero-img
+    width: 100%
+    height: 560px
+    object-fit: cover
+    display: block
+.doc-page__founder-section
+    position: relative
+    padding: 48px 0 64px
+    overflow: hidden
+.doc-page__decor
+    position: absolute
+    top: 50%
+    pointer-events: none
+    z-index: 0
+    object-fit: contain
+.doc-page__decor--robot
+    left: -80px
+    transform: translateY(-50%) scaleX(-1)
+    width: 440px
+    height: 400px
+.doc-page__decor--rocket
+    right: -60px
+    transform: translateY(-50%) scaleX(-1)
+    width: 270px
+    height: 270px
+.doc-page__founder-center
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 16px
+    position: relative
+    z-index: 1
+.doc-page__arrow
+    flex-shrink: 0
+    width: 56px
+    height: 56px
+    background: none
+    border: none
+    font-size: 72px
+    font-weight: 900
+    line-height: 1
+    color: #111
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: color .2s
+    z-index: 2
+    padding: 0
+    padding-bottom: 6px
+.doc-page__arrow:hover
+    color: #0905E5
+.doc-page__arrow:disabled
+    cursor: default
+    color: #bbb
+.doc-page__founder-card
+    width: 962px
+    position: relative
+    overflow: visible
+.doc-page__founder-top
+    background: linear-gradient(90deg, #0905E5 0%, #05037F 100%)
+    height: 150px
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 16px 16px 0 0
+.doc-page__founder-title
+    font-family: 'Montserrat', sans-serif
+    font-weight: 700
+    font-size: 32px
+    color: #fff
+    text-align: center
+    line-height: 1.2
+.doc-page__confirm-wrap
+    position: absolute
+    top: 150px
+    right: -64px
+    transform: translateY(-50%)
+    z-index: 2
+    pointer-events: none
+.doc-page__confirm-icon
+    width: 195px
+    height: 195px
+    object-fit: contain
+    display: block
+.doc-page__founder-body
+    min-height: 540px
+    background: #F9F9F9
+    border: 2px solid #000
+    border-top: none
+    border-radius: 0 0 16px 16px
+    padding: 36px 40px 36px 40px
+    box-sizing: border-box
+.doc-page__doc-list
+    list-style: none
+    display: flex
+    flex-direction: column
+    gap: 16px
+.doc-page__doc-item
+    font-family: 'Inter', sans-serif
+    font-size: 24px
+    font-weight: 400
+    line-height: 1.4
+.doc-page__doc-link
+    color: #0905E5
+    text-decoration: none
+    display: inline-block
+    padding: 4px 10px
+    border-radius: 6px
+    transition: background .18s, color .18s
+    &:hover
+        background: #0905E5
+        color: #fff
+.doc-page__mobile-nav
+    display: none
+
+// ===== Страница Документы — 768 =====
+
+@media (max-width: 768px)
+    .doc-page__heading
+        font-size: 48px
+    .doc-page__hero-img
+        height: 458px
+    .doc-page__founder-section
+        padding: 36px 0 52px
+        overflow: visible
+    .doc-page__decor
+        display: none
+    .doc-page__founder-center
+        position: relative
+        padding: 0 60px
+        gap: 0
+    .doc-page__arrow
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        font-size: 56px
+        width: 48px
+        height: 48px
+        padding-bottom: 6px
+    .doc-page__arrow--prev
+        left: 8px
+    .doc-page__arrow--next
+        right: 8px
+    .doc-page__founder-card
+        width: 668px
+    .doc-page__founder-top
+        height: 150px
+    .doc-page__founder-title
+        font-size: 28px
+    .doc-page__confirm-wrap
+        top: 150px
+        right: -44px
+    .doc-page__confirm-icon
+        width: 120px
+        height: 120px
+    .doc-page__founder-body
+        min-height: 540px
+        padding: 28px 40px 28px 28px
+    .doc-page__doc-item
+        font-size: 20px
+    .doc-page__doc-list
+        gap: 12px
+
+// ===== Страница Документы — 393 =====
+
+@media (max-width: 393px)
+    .doc-page__heading
+        font-size: 24px
+    .doc-page__hero-img
+        height: 234px
+    .doc-page__founder-section
+        padding: 24px 0 16px
+        overflow: visible
+    .doc-page__decor
+        display: none
+    .doc-page__founder-center
+        padding: 0 12px
+        position: static
+        gap: 0
+    .doc-page__arrow
+        display: none
+    .doc-page__founder-card
+        width: 337px
+        max-width: 100%
+    .doc-page__founder-top
+        height: 87px
+        border-radius: 12px 12px 0 0
+    .doc-page__founder-title
+        font-size: 20px
+    .doc-page__confirm-wrap
+        top: 87px
+        right: -22px
+    .doc-page__confirm-icon
+        width: 66px
+        height: 66px
+    .doc-page__founder-body
+        min-height: 332px
+        padding: 16px 20px 20px 16px
+        border-radius: 0 0 12px 12px
+    .doc-page__doc-item
+        font-size: 14px
+    .doc-page__doc-list
+        gap: 8px
+    .doc-page__doc-link
+        padding: 3px 7px
+        border-radius: 5px
+    .doc-page__mobile-nav
+        display: flex
+        align-items: center
+        justify-content: center
+        gap: 24px
+        margin-top: 24px
+        width: 100%
+    .doc-page__mobile-robot
+        width: 100px
+        height: 100px
+        object-fit: contain
+        display: block
+    .doc-page__nav-arrow
+        flex-shrink: 0
+        width: 44px
+        height: 44px
+        background: none
+        border: 2px solid #111
+        border-radius: 50%
+        font-size: 26px
+        font-weight: 900
+        line-height: 1
+        color: #111
+        cursor: default
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 0
+        padding-bottom: 4px
+
+// ===== Страница Контакты =====
+
+.contacts-page
+    position: relative
+    padding-bottom: 40px
+.contacts__title
+    font-family: 'Montserrat', sans-serif
+    font-weight: 700
+    font-size: 64px
+    color: #000
+    text-align: center
+    margin: 40px 0 32px
+.contact-card
+    border: 2px solid #000
+    overflow: visible
+    margin-bottom: 24px
+    position: relative
+    height: 450px
+    display: flex
+    flex-direction: column
+.contact-card__top
+    display: grid
+    grid-template-columns: 1fr 1fr
+    flex: 1
+    overflow: hidden
+    border-bottom: 2px solid #000
+.contact-card__name-wrap
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 32px 40px
+    background: #fff
+    border-right: 2px solid #000
+.contact-card__name
+    font-family: 'Inter', sans-serif
+    font-weight: 700
+    font-size: 28px
+    color: #000
+    text-align: center
+    line-height: 1.3
+.contact-card__map
+    position: relative
+    overflow: hidden
+.contact-card__map iframe
+    width: 100%
+    height: 100%
+    border: none
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+.contact-card__avatar
+    position: absolute
+    bottom: 130px
+    right: -10px
+    transform: translateY(50%) rotate(-15deg)
+    width: 110px
+    height: 110px
+    z-index: 5
+    pointer-events: none
+.contact-card__avatar img
+    width: 100%
+    height: 100%
+    object-fit: contain
+    display: block
+.contact-card__info
+    background: #0905E5
+    display: grid
+    grid-template-columns: 1fr 1fr
+    padding: 20px 32px
+    gap: 8px 40px
+    flex-shrink: 0
+    min-height: 130px
+    box-sizing: border-box
+.contact-card__info-col
+    display: flex
+    flex-direction: column
+    gap: 6px
+.contact-card__info-label
+    display: flex
+    align-items: center
+    gap: 10px
+    font-family: 'Inter', sans-serif
+    font-weight: 700
+    font-size: 22px
+    color: #fff
+.contact-card__info-label img
+    width: 28px
+    height: 28px
+    object-fit: contain
+    flex-shrink: 0
+.contact-card__info-text
+    font-family: 'Inter', sans-serif
+    font-weight: 400
+    font-size: 20px
+    color: #fff
+    line-height: 1.5
+
+// ===== Контакты — 768 =====
+
+@media (max-width: 768px)
+    .contacts__title
+        font-size: 48px
+        margin: 32px 0 24px
+    .contact-card
+        height: auto
+        min-height: 380px
+        margin-bottom: 16px
+        overflow: visible
+    .contact-card__top
+        min-height: 220px
+    .contact-card__name-wrap
+        padding: 24px
+    .contact-card__name
+        font-size: 24px
+    .contact-card__avatar
+        display: none
+    .contact-card__info
+        padding: 16px 24px
+        gap: 6px 20px
+        min-height: 110px
+    .contact-card__info-label
+        font-size: 18px
+        gap: 8px
+    .contact-card__info-label img
+        width: 24px
+        height: 24px
+    .contact-card__info-text
+        font-size: 16px
+
+// ===== Контакты — 393 =====
+
+@media (max-width: 393px)
+    .contacts__title
+        font-size: 24px
+        margin: 20px 0 16px
+    .contact-card
+        height: auto
+        margin-bottom: 12px
+        overflow: visible
+    .contact-card__top
+        grid-template-columns: 1fr 1fr
+        min-height: 130px
+    .contact-card__name-wrap
+        padding: 12px
+    .contact-card__name
+        font-size: 14px
+    .contact-card__map
+        min-height: 130px
+    .contact-card__avatar
+        display: none
+    .contact-card__info
+        grid-template-columns: 1fr 1fr
+        padding: 10px 12px
+        gap: 4px 10px
+        min-height: 90px
+    .contact-card__info-label
+        font-size: 13px
+        gap: 5px
+    .contact-card__info-label img
+        width: 18px
+        height: 18px
+    .contact-card__info-text
+        font-size: 14px
